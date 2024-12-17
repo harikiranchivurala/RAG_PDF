@@ -14,6 +14,8 @@ cd RAG_PDF
 python -m venv name_of_virtualenv  
 # activate the virtual environment
 # Install all the dependencies and requirements associated with the project.
+# run the below command if you want to use sentence transformer model with cuda support
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 pip install -r requirements.txt
 ```
 ## Project structure
@@ -55,9 +57,16 @@ questions should be separated by #
 ### Inference using streamlit
 
 ```bash
+
+
 streamlit run main.py
 ```
 bydefault it'll run on the localhost 8501 port
 
 You can upload the pdf file, click on process, once data is Ingested, you can ask questions and you'll get responses using PDF data as a context based on the query
+
+
+### TODO
+I have used opensoure sentence transformers model for creating embeddings for uploaded file, you can use openai embeddings as well.
+Should configure the embedings model from config
 
