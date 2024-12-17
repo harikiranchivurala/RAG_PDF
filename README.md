@@ -61,9 +61,13 @@ questions should be separated by #
 
 streamlit run main.py
 ```
-bydefault it'll run on the localhost 8501 port
+By default it'll run on the localhost 8501 port
 
 You can upload the pdf file, click on process, once data is Ingested, you can ask questions and you'll get responses using PDF data as a context based on the query
+
+<img src="data/rag_pdf_demo.gif" width="85%" height="auto">
+
+
 
 
 ### TODO
