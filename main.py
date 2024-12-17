@@ -27,7 +27,7 @@ def get_answer(query,store):
     return answer
 
 def main(store):
-    st.set_page_config(page_title="Chat with multiple PDFs",page_icon=":books:")
+    st.set_page_config(page_title="Chat with Uploaded PDF",page_icon=":books:")
     st.write(css,unsafe_allow_html=True)
     if "conversation" not in st.session_state:
         st.session_state.conversation=None
@@ -82,5 +82,8 @@ if __name__ == '__main__':
         #     st.session_state.vector_store = FaissVectorStore()
         st.session_state.vector_store = QdrantVectorStore()
     store = st.session_state.vector_store
-    main(store)
+    try:
+        main(store)
+    except Exception as e:
+        print("exception occured in main",e.args)
 

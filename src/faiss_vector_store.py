@@ -41,7 +41,7 @@ class FaissVectorStore:
         # print("loading the model...")
         # model = SentenceTransformer("all-mpnet-base-v2")
         response = self.model.encode(text)
-        print("embd_size",len(response))
+        # print("embd_size",len(response))
         
         return np.array(response)
     
@@ -55,7 +55,7 @@ class FaissVectorStore:
         # embeddings = np.array([self.embed_text(chunk) for chunk in chunks])
         # embeddings = np.array([self.sentence_embed_text(chunk) for chunk in chunks])
         embeddings = np.array(self.sentence_embed_text(chunks) )
-        print("chunks_size",len(chunks))
+        # print("chunks_size",len(chunks))
         
         self.index.add(embeddings)
         

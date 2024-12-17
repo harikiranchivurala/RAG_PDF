@@ -113,8 +113,8 @@ class QdrantVectorStore:
         query_vector=query_vector.tolist(),
         limit=k
             )
-        for hit in hits:
-            print(hit.payload, "score:", hit.score)
+        # for hit in hits:
+        #     print(hit.payload, "score:", hit.score)
         data = [hit.payload['data'] if hit.score > 0.25 else "data is not available" for hit in hits ]
 
         
